@@ -32,6 +32,12 @@ class NewTaskFragment : Fragment() {
         newTaskViewModel.text.observe(viewLifecycleOwner) {
             textView.text = it
         }
+
+        binding.buttonNewTask.setOnClickListener {
+            val taskText = binding.editTextNewTask.editText?.text.toString()
+            TODO("Chamar a função de inserção do banco e limpar o formulário.")
+        }
+
         return root
     }
 

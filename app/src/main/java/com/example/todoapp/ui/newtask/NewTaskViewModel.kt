@@ -1,13 +1,13 @@
-package com.example.todoapp.ui.dashboard
+package com.example.todoapp.ui.newtask
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 
-class DashboardViewModel : ViewModel() {
+class NewTaskViewModel : ViewModel() {
 
     private val _text = MutableLiveData<String>().apply {
-        value = "This is dashboard Fragment"
+        value = "Register new task"
     }
     val text: LiveData<String> = _text
 }

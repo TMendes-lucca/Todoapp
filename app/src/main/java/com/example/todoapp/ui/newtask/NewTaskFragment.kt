@@ -8,6 +8,7 @@ import android.widget.TextView
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import com.example.todoapp.databinding.FragmentNewTaskBinding
+import com.example.todoapp.service.model.TaskModel
 
 class NewTaskFragment : Fragment() {
 
@@ -34,8 +35,12 @@ class NewTaskFragment : Fragment() {
         }
 
         binding.buttonNewTask.setOnClickListener {
+            // TODO - Clear the form
             val taskText = binding.editTextNewTask.editText?.text.toString()
-            TODO("Chamar a função de inserção do banco e limpar o formulário.")
+
+            val taskModel = TaskModel(0, taskText)
+
+            newTaskViewModel.insertTask(taskModel)
         }
 
         return root

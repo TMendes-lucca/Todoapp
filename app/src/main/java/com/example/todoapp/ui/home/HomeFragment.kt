@@ -18,6 +18,7 @@ class HomeFragment : Fragment() {
     private lateinit var homeViewModel: HomeViewModel
     private lateinit var textView: TextView
     private lateinit var reciclerView: RecyclerView
+    private val adapter: TaskListAdapter = TaskListAdapter()
 
     private val binding get() = _binding!!
 
@@ -33,8 +34,9 @@ class HomeFragment : Fragment() {
         textView = binding.textHome
         reciclerView = binding.homeRvTaskList
 
+        // Set the RecyclerView needed definitions
         reciclerView.layoutManager = LinearLayoutManager(context)
-        reciclerView.adapter = TaskListAdapter()
+        reciclerView.adapter = adapter
 
         // Method that lists all tasks when the fragment is created
         homeViewModel.listAll()
@@ -52,7 +54,7 @@ class HomeFragment : Fragment() {
 
     private fun observe(){
         homeViewModel.taskList.observe(viewLifecycleOwner) {
-            // Update the UI
+            adapter.updateTasks(it)
         }
         homeViewModel.text.observe(viewLifecycleOwner) {
             textView.text = it

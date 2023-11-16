@@ -13,9 +13,6 @@ import com.example.todoapp.service.model.TaskModel
 class NewTaskFragment : Fragment() {
 
     private var _binding: FragmentNewTaskBinding? = null
-
-    // This property is only valid between onCreateView and
-    // onDestroyView.
     private val binding get() = _binding!!
 
     override fun onCreateView(
@@ -25,9 +22,7 @@ class NewTaskFragment : Fragment() {
     ): View {
         val newTaskViewModel =
             ViewModelProvider(this)[NewTaskViewModel::class.java]
-
         _binding = FragmentNewTaskBinding.inflate(inflater, container, false)
-        val root: View = binding.root
 
         val textView: TextView = binding.textNewTask
         newTaskViewModel.text.observe(viewLifecycleOwner) {
@@ -37,13 +32,11 @@ class NewTaskFragment : Fragment() {
         binding.buttonNewTask.setOnClickListener {
             // TODO - Clear the form
             val taskText = binding.editTextNewTask.editText?.text.toString()
-
             val taskModel = TaskModel(0, taskText)
-
             newTaskViewModel.insertTask(taskModel)
         }
 
-        return root
+        return binding.root
     }
 
     override fun onDestroyView() {

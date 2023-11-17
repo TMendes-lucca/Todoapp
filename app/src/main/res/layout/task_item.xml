@@ -16,14 +16,32 @@
             android:text="este é um exemplo de uma tarefa super longa"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.496"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.517" />
 
         <CheckBox
+            android:id="@+id/task_radio_button"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <Button
+            android:id="@+id/task_delete_button"
+            style="?attr/materialIconButtonStyle"
+            android:layout_width="42dp"
+            android:layout_height="0dp"
+            android:layout_marginEnd="16dp"
+            android:insetLeft="-1dp"
+            android:insetRight="4dp"
+            app:cornerRadius="8dp"
+            app:icon="@drawable/cancel_icon"
+            app:iconPadding="2dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 </com.google.android.material.card.MaterialCardView>

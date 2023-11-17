@@ -4,13 +4,18 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.RadioButton
 import android.widget.TextView
+import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.example.todoapp.R
 import com.example.todoapp.databinding.FragmentHomeBinding
+import com.example.todoapp.service.listener.TaskListener
 import com.example.todoapp.ui.adapter.TaskListAdapter
+import com.google.android.material.checkbox.MaterialCheckBox
 
 class HomeFragment : Fragment() {
 
@@ -38,9 +43,25 @@ class HomeFragment : Fragment() {
         reciclerView.layoutManager = LinearLayoutManager(context)
         reciclerView.adapter = adapter
 
+        val listener = object : TaskListener {
+            override fun onClickItem(view: View, index: Int) {
+                val radioBtn = view.findViewById<MaterialCheckBox>(R.id.task_radio_button)
+                radioBtn.isChecked = !radioBtn.isChecked
+                Toast.makeText(context, "Clicked on $index", Toast.LENGTH_SHORT).show()
+            }
+
+            override fun onClickDelete(index: Int) {
+                TODO("Not yet implemented")
+            }
+        }
+
+        adapter.attachListener(listener)
+
         // Method that lists all tasks when the fragment is created
         homeViewModel.listAll()
 
+
+        Toast.makeText(context, "onCreateView", Toast.LENGTH_SHORT).show()
         //Set the observers from the ViewModel
         observe()
 
@@ -60,4 +81,5 @@ class HomeFragment : Fragment() {
             textView.text = it
         }
     }
+
 }

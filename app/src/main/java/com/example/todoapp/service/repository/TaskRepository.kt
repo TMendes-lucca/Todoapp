@@ -59,4 +59,17 @@ class TaskRepository private constructor(context: Context) {
         }
         return list
     }
+
+    fun deleteTask(id: Int): Boolean{
+        return try {
+            val dbW = taskDataBase.writableDatabase
+            val whereClause = "id = ?"
+            val whereArgs = arrayOf("$id")
+            dbW.delete("tasks", whereClause, whereArgs)
+            true
+        } catch (e: Exception) {
+            false
+        }
+
+    }
 }

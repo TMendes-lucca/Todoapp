@@ -5,6 +5,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
+import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import com.example.todoapp.databinding.FragmentNewTaskBinding
@@ -30,10 +31,11 @@ class NewTaskFragment : Fragment() {
         }
 
         binding.buttonNewTask.setOnClickListener {
-            // TODO - Clear the form
-            val taskText = binding.editTextNewTask.editText?.text.toString()
-            val taskModel = TaskModel(0, taskText)
+            val taskText = binding.editTextNewTask
+            val taskModel = TaskModel(0, taskText.editText?.text.toString())
+            taskText.editText?.text?.clear()
             newTaskViewModel.insertTask(taskModel)
+            Toast.makeText(context, "Task created", Toast.LENGTH_SHORT).show()
         }
 
         return binding.root

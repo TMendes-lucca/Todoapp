@@ -12,6 +12,7 @@ import com.example.todoapp.R
 import com.example.todoapp.databinding.TaskItemBinding
 import com.example.todoapp.service.listener.TaskListener
 import com.example.todoapp.service.model.TaskModel
+import com.google.android.material.button.MaterialButton
 
 class TaskListAdapter() : Adapter<TaskListAdapter.TaskListViewHolder>(){
 
@@ -20,7 +21,6 @@ class TaskListAdapter() : Adapter<TaskListAdapter.TaskListViewHolder>(){
 
     class TaskListViewHolder(view: View, listener: TaskListener) : ViewHolder(view) {
         val description: TextView = view.findViewById(R.id.task_text)
-        val delete_btn: Button = view.findViewById(R.id.task_delete_button)
 
         init {
             view.setOnClickListener{
@@ -40,9 +40,10 @@ class TaskListAdapter() : Adapter<TaskListAdapter.TaskListViewHolder>(){
     }
 
     override fun onBindViewHolder(holder: TaskListViewHolder, position: Int) {
+        val id = taskList[position].id
         holder.description.text = taskList[position].description
-        holder.delete_btn.setOnClickListener{
-            listener.onClickDelete(position)
+        holder.itemView.findViewById<MaterialButton>(R.id.task_delete_button).setOnClickListener {
+            listener.onClickDelete(it, id)
         }
     }
 

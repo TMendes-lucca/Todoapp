@@ -16,6 +16,7 @@ import com.example.todoapp.databinding.FragmentHomeBinding
 import com.example.todoapp.service.listener.TaskListener
 import com.example.todoapp.ui.adapter.TaskListAdapter
 import com.google.android.material.checkbox.MaterialCheckBox
+import com.google.android.material.dialog.MaterialAlertDialogBuilder
 
 class HomeFragment : Fragment() {
 
@@ -47,11 +48,22 @@ class HomeFragment : Fragment() {
             override fun onClickItem(view: View, index: Int) {
                 val radioBtn = view.findViewById<MaterialCheckBox>(R.id.task_radio_button)
                 radioBtn.isChecked = !radioBtn.isChecked
-                Toast.makeText(context, "Clicked on $index", Toast.LENGTH_SHORT).show()
             }
 
-            override fun onClickDelete(index: Int) {
-                TODO("Not yet implemented")
+            override fun onClickDelete(view: View, index: Int) {
+                MaterialAlertDialogBuilder(view.context)
+                    .setTitle("Delete task")
+                    .setMessage("Would you like to delete this task?")
+                    .setNegativeButton("Cancel") { dialog, which ->
+                        Toast.makeText(context, "Canceled", Toast.LENGTH_SHORT).show()
+
+                    }
+                    .setPositiveButton("Delete") { dialog, which ->
+                        Toast.makeText(context, "Deleted", Toast.LENGTH_SHORT).show()
+                        homeViewModel.deleteTask(index)
+                        homeViewModel.listAll()
+                    }
+                    .show()
             }
         }
 

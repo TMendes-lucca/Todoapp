@@ -24,4 +24,8 @@ class HomeViewModel(application: Application) : AndroidViewModel(application) {
      fun listAll(){
         _taskList.value = repository.readAllTasks()
     }
+
+    fun deleteTask(id: Int){
+        repository.deleteTask(id)
+    }
 }

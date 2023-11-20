@@ -21,13 +21,8 @@ Basta seguir os passos da instalação e conceder as permissões conforme solici
 
 ### Tema Claro
 
-![Register new task](./assets/taskapp1.jpg "Tela 1 de tarefas")
-![Register new task](./assets/taskapp2.jpg "Tela 2 de tarefas")
-![Register new task](./assets/taskapp3.jpg "Tela 3 de tarefas")
-
+<img src="\assets\temaclaro.png"/>
 
 ### Tema Escuro
 
-![Register new task](./assets/taskapp4.jpg "Tela 4 de tarefas")
-![Register new task](./assets/taskapp5.jpg "Tela 5 de tarefas")
-![Register new task](./assets/taskapp6.jpg "Tela 6 de tarefas")
+<img src="\assets\temaescuro.png"/>

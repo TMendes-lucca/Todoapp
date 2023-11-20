@@ -26,4 +26,5 @@ Basta seguir os passos da instalação e conceder as permissões conforme solici
 
 ### Tema Escuro
 
-<img src="\assets\temaescuro.png"/>
+| <img src="\assets\taskapp4.jpg" height="450"/> | <img src="\assets\taskapp5.jpg" height="450"/> | <img src="\assets\taskapp6.jpg" height="450"/> |
+|:----------------------------------------------:|:----------------------------------------------:|:----------------------------------------------:|

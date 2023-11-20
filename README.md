@@ -19,13 +19,15 @@ Basta seguir os passos da instalação e conceder as permissões conforme solici
 
 ## Capturas de Tela
 
-[![Alt text](https://imgur.com/a/zL60BlD)](https://imgur.com/a/zL60BlD)
+### Tema Claro
+
+![Register new task](./assets/taskapp1.jpg "Tela 1 de tarefas")
+![Register new task](./assets/taskapp2.jpg "Tela 2 de tarefas")
+![Register new task](./assets/taskapp3.jpg "Tela 3 de tarefas")
 
 
+### Tema Escuro
 
-https://ibb.co/0jjjRPY
-https://ibb.co/98W9y5g
-https://ibb.co/9H7jw44
-https://ibb.co/47fmRv0
-https://ibb.co/TK52mCc
-https://ibb.co/pfhRyZV
+![Register new task](./assets/taskapp4.jpg "Tela 4 de tarefas")
+![Register new task](./assets/taskapp5.jpg "Tela 5 de tarefas")
+![Register new task](./assets/taskapp6.jpg "Tela 6 de tarefas")

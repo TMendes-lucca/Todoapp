@@ -21,7 +21,7 @@ Basta seguir os passos da instalação e conceder as permissões conforme solici
 
 ### Tema Claro
 
-| <img src="\assets\taskapp1.png" height="450"/> | <img src="\assets\taskapp2.png" height="450"/> | <img src="\assets\taskapp3.png" height="450"/> |
+| <img src="\assets\taskapp1.jpg" height="450"/> | <img src="\assets\taskapp2.jpg" height="450"/> | <img src="\assets\taskapp3.jpg" height="450"/> |
 |:----------------------------------------------:|:----------------------------------------------:|:----------------------------------------------:|
 
 ### Tema Escuro

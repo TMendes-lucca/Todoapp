@@ -21,6 +21,9 @@ Basta seguir os passos da instalação e conceder as permissões conforme solici
 
 ### Tema Claro
 
+
+<img src="\assets\taskapp1.jpg" style="height: 150px width:100px"/> 
+
 ![Register new task](./assets/taskapp1.jpg "Tela 1 de tarefas")
 ![Register new task](./assets/taskapp2.jpg "Tela 2 de tarefas")
 ![Register new task](./assets/taskapp3.jpg "Tela 3 de tarefas")

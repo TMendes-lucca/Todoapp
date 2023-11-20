@@ -33,9 +33,16 @@ class NewTaskFragment : Fragment() {
         binding.buttonNewTask.setOnClickListener {
             val taskText = binding.editTextNewTask
             val taskModel = TaskModel(0, taskText.editText?.text.toString())
-            taskText.editText?.text?.clear()
-            newTaskViewModel.insertTask(taskModel)
-            Toast.makeText(context, "Task created", Toast.LENGTH_SHORT).show()
+
+            if (taskText.editText?.text.toString().isNotBlank()) {
+                // Clear the form, insert into DB and send Toast to user
+                taskText.editText?.text?.clear()
+                newTaskViewModel.insertTask(taskModel)
+                Toast.makeText(context, "Task created", Toast.LENGTH_SHORT).show()
+            } else {
+                Toast.makeText(context, "Task description is empty", Toast.LENGTH_SHORT).show()
+                return@setOnClickListener
+            }
         }
 
         return binding.root

@@ -1,5 +1,6 @@
 package com.example.todoapp.ui.home
 
+import android.graphics.Paint
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -48,9 +49,14 @@ class HomeFragment : Fragment() {
             override fun onClickItem(view: View, index: Int) {
                 val radioBtn = view.findViewById<MaterialCheckBox>(R.id.task_radio_button)
                 radioBtn.isChecked = !radioBtn.isChecked
-            }
+                val taskText = view.findViewById<TextView>(R.id.task_text)
+                if (!radioBtn.isChecked)
+                    taskText.paintFlags = taskText.paintFlags and Paint.STRIKE_THRU_TEXT_FLAG.inv()
+                else
+                    taskText.paintFlags = taskText.paintFlags or Paint.STRIKE_THRU_TEXT_FLAG
+                    }
 
-            override fun onClickDelete(view: View, index: Int) {
+            override fun onClickDelete(view: View, id: Int) {
                 MaterialAlertDialogBuilder(view.context)
                     .setTitle("Delete task")
                     .setMessage("Would you like to delete this task?")
@@ -60,7 +66,7 @@ class HomeFragment : Fragment() {
                     }
                     .setPositiveButton("Delete") { dialog, which ->
                         Toast.makeText(context, "Deleted", Toast.LENGTH_SHORT).show()
-                        homeViewModel.deleteTask(index)
+                        homeViewModel.deleteTask(id)
                         homeViewModel.listAll()
                     }
                     .show()
@@ -71,9 +77,6 @@ class HomeFragment : Fragment() {
 
         // Method that lists all tasks when the fragment is created
         homeViewModel.listAll()
-
-
-        Toast.makeText(context, "onCreateView", Toast.LENGTH_SHORT).show()
         //Set the observers from the ViewModel
         observe()
 

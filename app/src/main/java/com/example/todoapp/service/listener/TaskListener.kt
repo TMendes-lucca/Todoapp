@@ -5,5 +5,5 @@ import android.view.View
 interface TaskListener {
     fun onClickItem(view: View, index: Int)
 
-    fun onClickDelete(view: View, index: Int)
+    fun onClickDelete(view: View, id: Int)
 }
